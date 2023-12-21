@@ -1,0 +1,38 @@
+title: Python 101
+author: The ATGenomics Team
+copyright: "2023"
+logo: imgs/logo.png
+exclude_patterns: [".DS_Store", "**.ipynb_checkpoints", ".virtual_documents/", "README.md"]
+
+execute:
+  execute_notebooks: off #force
+
+latex:
+  latex_documents:
+    targetname: book.tex
+  latex_engine: xelatex
+
+sphinx:
+  config:
+    html_theme_options:
+      use_download_button: true
+      navbar_footer_text: <a href="https://atgenomics.com">ATGenomics</a>
+      toc_title: Contenido
+
+parse:
+  myst_enable_extensions:
+    - html_image
+    - colon_fence
+
+  #  - amsmath
+  #  - deflist
+  #  - dollarmath
+  #  - html_admonition
+  #  - linkify
+  #  - replacements
+  #  - smartquotes
+  #  - substitution
+
+html:
+  favicon: imgs/favicon.ico
+

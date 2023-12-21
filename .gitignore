@@ -1,0 +1,6 @@
+book/_build/
+notebook/
+.ipynb_checkpoints
+Makefile
+.jupyter*.db
+.DS_Store

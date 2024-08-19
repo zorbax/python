@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        files: \.ipynb$
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+      - id: black
+        name: black
+        entry: black
+        language: system
+        types: [file, python]
+      - id: isort
+        name: isort
+        entry: isort
+        language: system
+        types: [file, python]

@@ -1,6 +1,6 @@
 title: Python 101
 author: The ATGenomics Team
-copyright: "2023"
+copyright: "2024"
 logo: imgs/logo.png
 exclude_patterns: [".DS_Store", "**.ipynb_checkpoints", ".virtual_documents/", "README.md"]
 
@@ -14,9 +14,11 @@ latex:
 
 sphinx:
   config:
+    html_theme: pydata_sphinx_theme
     html_theme_options:
       use_download_button: true
-      navbar_footer_text: <a href="https://atgenomics.com">ATGenomics</a>
+      footer_items: <a href="https://atgenomics.com">ATGenomics</a>
+      navbar_align: left
       toc_title: Contenido
 
 parse:

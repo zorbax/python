@@ -1,9 +1,6 @@
-Python
-======
+# Python
 
-Python es un lenguaje de programación de propósito general que a menudo 
-se aplica en *scripting*, secuencia de comandos. Comúnmente se define como un 
-lenguaje de *scripting* orientado a objetos,
+Python es un lenguaje de programación de propósito general que a menudo se aplica en *scripting*, secuencia de comandos. Comúnmente se define como un lenguaje de *scripting* orientado a objetos.
 
 ## Características de Python
 
@@ -24,52 +21,39 @@ lenguaje de *scripting* orientado a objetos,
 
 ## ¿Cómo conseguir Python?
 
-- Mediante el instalador de la [Python Software Foundation](https://www.python.org/) (Windows, Linux y macOS)
-- Instalación mediante gestor de paquetes en distribuciones Linux, DPKG, RPM, Pacman Zypper
-- Instalación, mediante gestor de paquetes llamado Homebrew (MacOS)
+- Instalador oficial de la [Python Software Foundation](https://www.python.org/) (Windows, Linux y macOS)
+- Mediante gestor de paquetes en distribuciones Linux: `apt`, `rpm`, `dnf`, `pacman`, and `zypper`.
+- Gestor de paquetes Homebrew (MacOS)
 - Utilizando Anaconda/Miniconda (Windows, Linux y macOS)
 
 ## ¿Cómo utilizar Python?
 
 - A través del intérprete
-    * Sesión REPL (*Read–eval–print loop*) interactiva de python, también llamada *python shell* (`>>>`)
-    * Utilizando el intérprete en terminal (*scripting mode*): `python hello.py`
-
+  - Sesión REPL (*Read–eval–print loop*) interactiva de python también llamada *python shell* (`>>>`)
+  - Utilizando el intérprete en terminal (*scripting mode*): `python hello.py`
 - Utilizando "Interactive Python"
-    * Una sesión interactiva `IPython` en terminal (`In[1]:`)
-    * Un IPython notebook, Jupyter Lab, Jupyter Notebook
-
-- A través de una IDE
-    * [Spyder](https://www.spyder-ide.org)
-    * [Pycharm](https://www.jetbrains.com/pycharm/)
-    * [Rstudio](https://www.rstudio.com) 😂
-    * Editores de texto: Vim, Sublime, Atom, Visual Studio
+  - Una sesión interactiva `IPython` en terminal (`In[1]:`)
+  - Un IPython notebook, Jupyter Lab, Jupyter Notebook
+- A través de una editor/IDE
+  - [VS Code](https://code.visualstudio.com)
+  - [Pycharm](https://www.jetbrains.com/pycharm/)
+  - [Spyder](https://www.spyder-ide.org)
+  - [Rstudio](https://www.rstudio.com) 😂
+  - Editores de texto: Vim, Emacs
 
 ```{admonition} ATG Workshop
 Para este curso vamos a utilizar tres elementos del ecosistema de Python:
 
-- Miniconda
-- Jupyter Lab
-- Pip
+- `pyenv`
+- `jupyter lab`
+- `pip`
 ```
 
-## Instalación de Homebrew (sólo MacOS)
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Instalar `wget`:
-```bash
-brew install wget
-```
-
-## Instalación de Miniconda
+## Instalación de micromamba
 
 ```bash
-mkdir -p $HOME/bin
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/bin/miniconda3
-rm Miniconda3-latest-Linux-x86_64.sh && cd
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+micromamba shell completion
 ```
 
 ```{admonition} ¡Recuerda!
@@ -106,74 +90,67 @@ channels:
 EOF
 ```
 
-## Un minitutorial de conda
+## Un minitutorial de micromamba
 
-**Verificar versión de conda**
+Verificar versión de conda**
+
 ```bash
 conda info
 ```
 
-**Actualizar conda**
+Actualizar conda**
+
 ```bash
 conda update conda
 ```
 
-**Listar todos los entornos de conda**
+Listar todos los entornos de conda**
+
 ```bash
 conda env list
 ```
 
-**Actualizar todos los paquetes de conda (base)**
+Actualizar todos los paquetes de conda (base)**
+
 ```bash
 conda update conda --all
 ```
 
-**Agregar canales**
+Agregar canales**
+
 ```bash
 conda config --add channels r
 conda config --add channels conda-forge
 conda config --add channels bioconda
 ```
 
-**Buscar un paquete**
+Buscar un paquete**
+
 ```bash
 conda search PACKAGE
 ```
 
-**Instalar un paquete en el entorno base**
+Instalar un paquete en el entorno base**
+
 ```bash
 conda install PACKAGE
 ```
 
-**Eliminar temporales y actualizar todo**
+Eliminar temporales y actualizar todo**
+
 ```bash
 conda clean --all
 conda update --all
 ```
 
-**Eliminar entorno**
+Eliminar entorno**
+
 ```bash
 conda remove -n qiime2 --all
 ```
 
-**Crear un entorno en un canal específico con una versión particular de python y con una versión específica de un paquete**
+Crear un entorno en un canal específico con una versión particular de python y con una versión específica de un paquete**
+
 ```bash
 conda create -y -n test3.6 python=3.6 pandas=1.0
-```
- 
-## Consideraciones técnicas de MacOS
-
-![](imgs/python_environment_2x.png)
-
-## Preparándonos para el curso
-
-```bash
-pip install ipython jupyterlab pandas numpy \
-    matplotlib seaborn xlrd jupyterlab-lsp \
-    jedi-language-server black \
-    pandas-profiling[notebook]
-```
-
-```bash
-jupyter lab
 ```

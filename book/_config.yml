@@ -14,26 +14,16 @@ latex:
 
 sphinx:
   config:
-    html_theme: pydata_sphinx_theme
+    html_theme: sphinx_book_theme
     html_theme_options:
-      use_download_button: true
-      footer_items: <a href="https://atgenomics.com">ATGenomics</a>
-      navbar_align: left
+      use_download_button: false
+      extra_footer: <a href="https://atgenomics.com">ATGenomics</a>
       toc_title: Contenido
 
 parse:
   myst_enable_extensions:
     - html_image
     - colon_fence
-
-  #  - amsmath
-  #  - deflist
-  #  - dollarmath
-  #  - html_admonition
-  #  - linkify
-  #  - replacements
-  #  - smartquotes
-  #  - substitution
 
 html:
   favicon: imgs/favicon.ico

@@ -5,6 +5,10 @@ parts:
     chapters:
     - file: content/day01
     - file: content/day02
+  - caption: Lo intermedio
+    chapters:
     - file: content/day03
     - file: content/day04
     - file: content/day05
+    - file: content/python.ipynb
+    - file: content/matplotlib.ipynb

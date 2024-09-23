@@ -5,7 +5,8 @@ def get_gc_content(seq):
     Este es un programa que hace magia.
     Calcula el contenido de GC.
     """
-    if type(seq) == str:
+    # if type(seq) == str
+    if isinstance(seq, str):
         c = a = g = t = 0
 
         for nucl in seq:
@@ -24,8 +25,7 @@ def get_gc_content(seq):
     return gc_content
 
 
-
-def get_codons(seq):
+def get_codons(seq_rna):
     """
     Esta función divide la secuencia en segmentos de 3
     y envía cada fragmento a una lista
@@ -33,9 +33,18 @@ def get_codons(seq):
     codon_list = []
 
     for i in range(0, len(seq_rna), 3):
-        codon = seq_rna[i:i + 3]
+        codon = seq_rna[i : i + 3]
         if len(codon) < 3:
             codon_list.append("*")
         else:
             codon_list.append(codon)
     return codon_list
+
+
+# Instal packages with piplite
+import sys
+
+if "pyodide" in sys.modules:
+    import piplite
+
+    await piplite.install("pyb2d-jupyterlite-backend>=0.4.2")
